@@ -1,16 +1,16 @@
 import { useEffect } from 'react'
 
 import './App.css'
-import { startGame } from './game'; // Importing startGame function from game.js
+import { startGame } from './game'; // Importing startGame
 
 const App: React.FC = () => {
   useEffect(() => {
-    startGame(); // Start the game when the component mounts
+    startGame(); // Start the game
   }, []);
 
   return (
     <div>
-      {/* Your React component JSX */}
+      {}
     </div>
   );
 };
