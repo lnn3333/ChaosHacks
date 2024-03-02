@@ -56,6 +56,7 @@
 .box {
   width: 100px;
   height: 100px;
+  background-color: red;
   border: solid, black, 3px;
   animation: fall 3s ease-in-out forwards;
 }
