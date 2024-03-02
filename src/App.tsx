@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface BoxProps {
   x: number;
@@ -13,28 +13,17 @@ function Box({ x, y }: BoxProps) {
     const box = boxRef.current;
     if (!box) return;
 
-    const handleCollision = () => {
-      if (!boxRef.current) return false;
-
-      const currentBox = boxRef.current.getBoundingClientRect();
-      // Logic for collision detection goes here
-      return false; // Placeholder return value
-    };
-
-    const boxSize = 50;
     let dy = 0; // Vertical velocity
     let gravity = 0.2; // Reduced gravity force
-    const ground = window.innerHeight - boxSize; // Ground position
+    const ground = window.innerHeight - box.clientHeight; // Ground position
 
     const fall = () => {
       // Update position based on velocity
       y += dy;
-      if (!handleCollision()) {
-        box.style.transform = `translate(${x}px, ${y}px)`;
-      }
+      box.style.transform = `translate(${x}px, ${y}px)`;
 
       // Apply gravity
-      if (y < ground) {
+      if (y + (box.clientHeight / 2)< ground) {
         dy += gravity; // Increase velocity if above ground
       } else {
         dy = 0; // Stop falling when hitting the ground
