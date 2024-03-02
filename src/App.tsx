@@ -26,9 +26,7 @@ function Box({ x, y }: BoxProps) {
       if (y < ground) {
         dy += gravity; // Increase velocity if above ground
       } else {
-        // Adjust box position if it goes below ground
-        y = ground - box.clientHeight;
-        dy = 0; // Stop falling when hitting the ground
+        dy = 25; // Stop falling when hitting the ground
       }
 
       // Request next animation frame
@@ -47,7 +45,7 @@ function Box({ x, y }: BoxProps) {
 
 function App() {
   // Generate initial positions for boxes
-  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * (window.innerWidth - 100) + 50, y: Math.random() * (window.innerHeight - 200) }));
+  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * (window.innerWidth - 100) + 50, y: Math.random() * 200 }));
 
   return (
     <div style={{ position: 'relative' }}>
