@@ -1,5 +1,5 @@
 import React from 'react';
-import PhysicsSimulation from './physics';
+import PhysicsSimulation from './PhysicsSimulation';
 
 function App() {
   return (
