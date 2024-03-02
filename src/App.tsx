@@ -6,9 +6,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Chaos Hacks</h1>
-    </>
+    <div className="container">
+      <div className="box"></div> {/* This is the box */}
+    </div>
   )
 }
 
