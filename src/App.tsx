@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface BoxProps {
   x: number;
@@ -40,7 +40,7 @@ function Box({ x, y }: BoxProps) {
     return () => cancelAnimationFrame(animationFrameIdRef.current!);
   }, [x, y]); // Re-run effect when x or y changes
 
-  return <div ref={boxRef} style={{ width: '50px', height: '50px', backgroundColor: 'blue', position: 'absolute' }}></div>;
+  return <div ref={boxRef} style={{ width: '50px', height: '50px', border: '2px solid black', position: 'absolute', backgroundColor: 'transparent' }}></div>;
 }
 
 function App() {
