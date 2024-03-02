@@ -50,13 +50,13 @@
 
 @keyframes fall {
   0% { transform: translateY(-100px); }
-  100% { transform: translateY(100vh - 100px); }
+  100% { transform: translateY(100vh - 10px); }
 }
 
 .box {
   width: 100px;
   height: 100px;
   background-color: red;
-  border: solid, black, 3px;
+  border: solid, black, 10px;
   animation: fall 3s ease-in-out forwards;
 }
