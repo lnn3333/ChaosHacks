@@ -1,12 +1,12 @@
 // game.js
-export var box;
+var myGamePiece;
 
 export function startGame() {
-    box = new component(30, 30, "red", 80, 75);
-    area.start();
+    myGamePiece = new component(30, 30, "red", 80, 75);
+    myGameArea.start();
 }
 
-export var area = {
+var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 480;
@@ -23,7 +23,7 @@ export var area = {
     }
 }
 
-export function component(width, height, color, x, y, type) {
+function component(width, height, color, x, y, type) {
     this.type = type;
     this.width = width;
     this.height = height;
@@ -34,7 +34,7 @@ export function component(width, height, color, x, y, type) {
     this.gravity = 0.05;
     this.gravitySpeed = 0;
     this.update = function() {
-        ctx = area.context;
+        ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
@@ -45,7 +45,7 @@ export function component(width, height, color, x, y, type) {
         this.hitBottom();
     }
     this.hitBottom = function() {
-        var rockbottom = area.canvas.height - this.height;
+        var rockbottom = myGameArea.canvas.height - this.height;
         if (this.y > rockbottom) {
             this.y = rockbottom;
         }
@@ -53,7 +53,7 @@ export function component(width, height, color, x, y, type) {
 }
 
 function updateGameArea() {
-    area.clear();
-    box.newPos();
-    box.update();
+    myGameArea.clear();
+    myGamePiece.newPos();
+    myGamePiece.update();
 }
