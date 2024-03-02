@@ -15,7 +15,7 @@ function Box({ x, y }: BoxProps) {
 
     let dy = 0; // Vertical velocity
     let gravity = 0.2; // Reduced gravity force
-    const ground = window.innerHeight; // Ground position
+    const ground = window.innerHeight - box.clientHeight; // Ground position
 
     const fall = () => {
       // Update position based on velocity
@@ -23,7 +23,7 @@ function Box({ x, y }: BoxProps) {
       box.style.transform = `translate(${x}px, ${y}px)`;
 
       // Apply gravity
-      if (y < ground) {
+      if (y < ground + box.clientHeight) {
         dy += gravity; // Increase velocity if above ground
       } else {
         dy = 0; // Stop falling when hitting the ground
