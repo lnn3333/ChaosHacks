@@ -45,7 +45,7 @@ function Box({ x, y }: BoxProps) {
 
 function App() {
   // Generate initial positions for boxes
-  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * (window.innerWidth - 200) + 50, y: Math.random() * 200 }));
+  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * (window.innerWidth) + 50, y: Math.random() * 200 }));
 
   return (
     <div style={{ position: 'relative' }}>
