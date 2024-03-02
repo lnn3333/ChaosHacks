@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import WeatherPage from './weatherPage';
 import Home from './home';
@@ -8,7 +7,7 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route exact path = "/home" component = {Home} />     
+             <Route  path = "/home" component = {Home} />     
               <Route exact path = "/weather" component = {WeatherPage} />             
             </Switch>
           </div>
