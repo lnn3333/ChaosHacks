@@ -14,7 +14,7 @@ function Box({ x, y }: BoxProps) {
     if (!box) return;
 
     let dy = 0; // Vertical velocity
-    let gravity = 0.5; // Gravity force
+    let gravity = 0.2; // Reduced gravity force
     const ground = window.innerHeight - box.clientHeight; // Ground position
 
     const fall = () => {
@@ -45,10 +45,10 @@ function Box({ x, y }: BoxProps) {
 
 function App() {
   // Generate initial positions for boxes
-  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight }));
+  const boxes = Array.from({ length: 5 }, (_, index) => ({ x: Math.random() * (window.innerWidth - 100) + 50, y: Math.random() * 200 }));
 
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       {boxes.map((box, index) => (
         <Box key={index} x={box.x} y={box.y} />
       ))}
