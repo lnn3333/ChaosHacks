@@ -47,4 +47,14 @@
   height: 50px;
   background-color: transparent;
   border: black solid 3px;
+  animation: fall 3s forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(100vh - 50px)); /* Falling to the bottom */
+  }
 }
