@@ -48,8 +48,14 @@
   height: 100vh;
 }
 
+@keyframes fall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
+
 .box {
   width: 100px;
   height: 100px;
   background-color: blue;
+  animation: fall 3s ease-in-out infinite;
 }
