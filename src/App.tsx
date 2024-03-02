@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface BoxProps {
   x: number;
@@ -15,7 +15,7 @@ function Box({ x, y }: BoxProps) {
 
     let dy = 0; // Vertical velocity
     let gravity = 0.2; // Reduced gravity force
-    const ground = window.innerHeight - box.clientHeight; // Ground position
+    const ground = window.innerHeight; // Ground position
 
     const fall = () => {
       // Update position based on velocity
@@ -26,7 +26,7 @@ function Box({ x, y }: BoxProps) {
       if (y < ground) {
         dy += gravity; // Increase velocity if above ground
       } else {
-        dy = 25; // Stop falling when hitting the ground
+        dy = 0; // Stop falling when hitting the ground
       }
 
       // Request next animation frame
