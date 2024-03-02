@@ -23,7 +23,7 @@ function Box({ x, y }: BoxProps) {
       box.style.transform = `translate(${x}px, ${y}px)`;
 
       // Apply gravity
-      if (y < ground + box.clientHeight) {
+      if (y + box.clientHeight < ground) {
         dy += gravity; // Increase velocity if above ground
       } else {
         dy = 0; // Stop falling when hitting the ground
