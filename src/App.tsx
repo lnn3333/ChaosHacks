@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface BoxProps {
   x: number;
@@ -23,7 +23,7 @@ function Box({ x, y }: BoxProps) {
       box.style.transform = `translate(${x}px, ${y}px)`;
 
       // Apply gravity
-      if (y + box.clientHeight < ground) {
+      if (y + (box.clientHeight / 2)< ground) {
         dy += gravity; // Increase velocity if above ground
       } else {
         dy = 0; // Stop falling when hitting the ground
