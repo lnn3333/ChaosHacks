@@ -2,7 +2,6 @@
 var myGamePiece;
 var myGamePiece1;
 
-
 export function startGame() {
     myGamePiece = new component(200, 100, "red", 1000, 0);
     myGamePiece1 = new component(200, 100, "blue", 500, 0);
