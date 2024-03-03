@@ -1,15 +1,18 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 
 import './App.css'
+import { startGame } from './game'; // Importing startGame
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  useEffect(() => {
+    startGame(); // Start the game
+  }, []);
 
   return (
-    <>
-      <h1>Chaos Hacks</h1>
-    </>
-  )
-}
+    <div>
+      {}
+    </div>
+  );
+};
 
 export default App
