@@ -45,19 +45,19 @@ function WeatherPage() {
     const formattedCurrentTime = currentWeather ? formatTime(currentWeather.time) : null;
 
     return (
-        <>
-            <h1 style={{width: 384, height: 87, background: '#ACE6F3', borderRadius: 43.50, margin: '70px 20px 50px 50px', textAlign: 'center',fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '40px' }}>Weather of (City)</h1> {/* Moved this line to the top */}
+        <div style={{ backgroundImage: "url('https://s7d2.scene7.com/is/image/TWCNews/WI_AIV2_SEAN_OSTER_61723')", backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh' }}>   
+            <h1 style={{width: 384, height: 87, background: '#ACE6F3',top: '10px', position: 'relative', borderRadius: 43.50, margin: '40px 20px 50px 50px', textAlign: 'center',fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '40px' }}>Weather of Surrey</h1> {/* Adjusted margin-top to move it down */}
             <div style={{ margin: '20px 20px' }}>
                 {currentWeather && (
-                    <div style={{ width: '184px', height: '183px', background: '#D9D9D9', borderRadius: '39px', margin: '20px 20px 50px 50px', fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '60px', wordWrap: 'break-word', textAlign: 'center' }}>
+                    <div style={{ width: '184px', height: '183px', background: '#E82F66', borderRadius: '39px',top:30, margin: '40px 20px 50px 50px', fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '60px', wordWrap: 'break-word', textAlign: 'center' }}>
                         <p>{formattedCurrentTime}</p>
                         <p>{Math.round(currentWeather.temperature)} °C</p>
                     </div>
                 )}
                 {weatherData && (
-                    <div style={{ display: 'flex', flexDirection: 'row', margin: '70px 20px  auto' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', margin: '40px 20px  auto' }}>
                         {weatherData.time.slice(0, 7).map((dateTime, index) => (
-                            <div key={index} style={{ width: '150px', textAlign: 'center', color: 'black', fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '60px', wordWrap: 'break-word', margin: '25px', backgroundColor: '#EDEBEB' }}>
+                            <div key={index} style={{ width: '150px', textAlign: 'center', color: 'black', fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '60px', wordWrap: 'break-word', margin: '25px', backgroundColor: '#E82F66' }}>
                                 <p>{formatTime(dateTime)}</p>
                                 <p>
                                     {Math.round(weatherData.temperature2m[index])} °C
@@ -69,7 +69,7 @@ function WeatherPage() {
                 )}
                 <GravityComponent />
             </div>
-        </>
+        </div>
     );
 }
 
