@@ -1,0 +1,55 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0), darkgray);
+  }
+  .box {
+      width: 100px;
+      height: 100px;
+      background-color: transparent;
+      color: black;
+      text-align: center;
+      line-height: 100px;
+      position: absolute;
+    }
+    
+    #time {
+      border: red solid 1px;
+    }
+  
+    #location {
+      border: blue solid 1px;
+    }
+  
+    #sevenpm {
+      border: yellow solid 1px;
+    }
+  
+    #eightpm {
+      border: green solid 1px;
+    }
+  
+    #ninepm {
+      border: brown solid 1px;
+    }
+  
+    #tenpm {
+      border: black solid 1px;
+    }
+  
+    #elevpm {
+      border: purple solid 1px;
+    }
+  
+    #twelvam {
+      border: teal solid 1px;
+    }
+  
+    #oneam {
+      border: orange solid 1px;
+    }
