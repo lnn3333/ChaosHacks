@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import getWeatherData from './weatherAPI';
+import GravityComponent from './GravityComponent'; // Import the GravityComponent
 
 function WeatherPage() {
     const [weatherData, setWeatherData] = useState(null);
@@ -53,17 +54,20 @@ function WeatherPage() {
                         <p>{Math.round(currentWeather.temperature)} °C</p>
                     </div>
                 )}
-               {weatherData && (
+                {weatherData && (
                     <div style={{ display: 'flex', flexDirection: 'row', margin: '70px 20px  auto' }}>
                         {weatherData.time.slice(0, 7).map((dateTime, index) => (
                             <div key={index} style={{ width: '150px', textAlign: 'center', color: 'black', fontSize: '30px', fontFamily: 'Inter', fontWeight: '400', lineHeight: '60px', wordWrap: 'break-word', margin: '25px', backgroundColor: '#EDEBEB' }}>
                                 <p>{formatTime(dateTime)}</p>
-                                <p>{Math.round(weatherData.temperature2m[index])} °C</p>
+                                <p>
+                                    {Math.round(weatherData.temperature2m[index])} °C
+                                </p>
+                              
                             </div>
                         ))}
                     </div>
                 )}
-
+                <GravityComponent />
             </div>
         </>
     );
